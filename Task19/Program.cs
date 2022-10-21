@@ -2,19 +2,22 @@
 //которая принимает на вход пятизначное число 
 //и проверяет, является ли оно палиндромом.
 
-int NumberLen (int number) // функция, выдающая количество цифр в заданном числе
+string Palindrom (int number)
 {
-    int count = 0;
-    while (Math.Abs(number) >= 1)
+    if (number/10000 < 1 || number/10000 >= 10)
     {
-        number = Math.Abs(number/10);
-        count ++;
+        return "Введенное вами число не является пятизначным.";
     }
-    return count;
+    else if (number/10000 == number%10 && number%10000/1000 == number%100/10)
+    {
+       return "Введенное вами пятизначное число является палиндромом.";
+    }
+    else 
+    {
+        return "Введенное вами пятизначное число не является палиндромом.";
+    }
 }
-
-
 Console.Clear();
-int N = int.Parse(Console.ReadLine()!);
-int M = NumberLen(N);
-Console.Write(M);
+Console.Write("Введите любое пятизначное число: ");
+int n = int.Parse(Console.ReadLine()!);
+Console.WriteLine (Palindrom(n));
