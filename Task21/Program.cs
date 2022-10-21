@@ -4,7 +4,7 @@
 //находит расстояние 
 //между ними в 3D пространстве.
 
-double GetDistance (double x1, double y1, double z1, double x2, double y2, double z2)
+double GetDistance(double x1, double y1, double z1, double x2, double y2, double z2)
 {
     double x = x2 - x1;
     double y = y2 - y1;
